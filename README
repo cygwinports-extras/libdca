@@ -69,6 +69,7 @@ Files included in the binary packages:
   /usr/lib/libdca.a
   /usr/lib/libdca.dll.a
   /usr/lib/libdca.la
+  /usr/lib/libdts_pic.dll.a
   /usr/lib/libdts.a
   /usr/lib/libdts.dll.a
   /usr/lib/libdts.la
