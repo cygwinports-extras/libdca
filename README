@@ -10,7 +10,7 @@ Build requirements:
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
   binutils-20060817-1
-  cygport-0.2.11-1
+  cygport-0.3.6-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
   libtool1.5-1.5.23a-2
@@ -79,6 +79,11 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.0.5-2 -----
+Explicitely exported dts_* symbols as alias to corresponding dca_*,
+for the benefit of AC_CHECK_LIB configure tests.
+This *might* make libdca0 a drop-in replacement for libdts0.
 
 ----- version 0.0.5-1 -----
 Renamed upstream to libdca, with compatibility links to libdts.

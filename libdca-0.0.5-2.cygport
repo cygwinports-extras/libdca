@@ -1,0 +1,34 @@
+DESCRIPTION="DTS Coherent Acoustics decoder library (aka libdts)"
+HOMEPAGE="http://developers.videolan.org/libdca.html"
+SRC_URI="http://download.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.bz2
+		 http://download.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.bz2.sig"
+
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
+PKG_HINTS='setup runtime devel'
+PKG_CONTENTS[0]='--exclude=*.dll usr/bin/ usr/share/'
+PKG_CONTENTS[1]='usr/bin/*.dll'
+PKG_CONTENTS[2]='usr/include/ usr/lib/'
+
+CYGCONF_ARGS="--disable-win"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# libdca0 is NOT compatible with libdts0-0.0.2 !!
+	# cp ${D}/usr/bin/cyg{dca,dts}-0.dll
+
+	for ext in a dll.a la
+	do
+		rm -f ${D}/usr/lib/libdts.${ext}
+		dosym libdca.${ext} /usr/lib/libdts.${ext}
+	done
+
+	dosym libdca.dll.a /usr/lib/libdts_pic.dll.a
+
+	for app in dtsdec extract_dts
+	do
+		rm -f ${D}/usr/share/man/man1/${app}.1
+		echo ".so ${app/dts/dca}.1" > ${D}/usr/share/man/man1/${app}.1
+	done
+}
