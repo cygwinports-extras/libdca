@@ -1,4 +1,4 @@
 category: Audio
-requires: cygwin libdca0
+requires: cygwin libdca0 libgcc1
 sdesc: "DTS Coherent Acoustics streams decoder (utilities)"
 ldesc: "This is a free library for decoding DTS Coherent Acoustics streams."

@@ -3,18 +3,18 @@ libdca
 This is a free library for decoding DTS Coherent Acoustics streams.
 
 Runtime requirements:
-  cygwin-1.5.24-2
+  cygwin-1.7.0-44
+  libgcc1-4.3.2-2
 
 Build requirements:
-  cygwin-1.5.24-2
-  autoconf2.5-2.61-1
-  automake1.9-1.9.6-2
-  binutils-20060817-1
-  cygport-0.3.6-1
-  gawk-3.1.5-4
-  gcc-core-3.4.4-3
-  libtool1.5-1.5.23a-2
-  make-3.81-1
+  autoconf2.5-2.63-10
+  automake1.9-1.9.6-10
+  binutils-20080624-2
+  cygport-0.9.6-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-11
+  make-3.81-2
   sed-4.1.5-2
 
 Canonical website:
@@ -47,50 +47,31 @@ Files included in the binary packages:
   /usr/bin/dtsdec
   /usr/bin/extract_dca.exe
   /usr/bin/extract_dts
-  /usr/share/doc/Cygwin/libdca-0.0.5.README
-  /usr/share/doc/libdca-0.0.5/AUTHORS
-  /usr/share/doc/libdca-0.0.5/COPYING
-  /usr/share/doc/libdca-0.0.5/ChangeLog
-  /usr/share/doc/libdca-0.0.5/INSTALL
-  /usr/share/doc/libdca-0.0.5/NEWS
-  /usr/share/doc/libdca-0.0.5/README
-  /usr/share/doc/libdca-0.0.5/TODO
+  /usr/share/doc/libdca/AUTHORS
+  /usr/share/doc/libdca/COPYING
+  /usr/share/doc/libdca/ChangeLog
+  /usr/share/doc/libdca/NEWS
+  /usr/share/doc/libdca/README
+  /usr/share/doc/libdca/TODO
   /usr/share/man/man1/dcadec.1.gz
-  /usr/share/man/man1/dtsdec.1.gz
   /usr/share/man/man1/extract_dca.1.gz
-  /usr/share/man/man1/extract_dts.1.gz
 
 (libdca0)
   /usr/bin/cygdca-0.dll
 
 (libdca-devel)
   /usr/include/dca.h
-  /usr/include/dts.h
   /usr/lib/libdca.a
   /usr/lib/libdca.dll.a
   /usr/lib/libdca.la
-  /usr/lib/libdts_pic.dll.a
-  /usr/lib/libdts.a
-  /usr/lib/libdts.dll.a
-  /usr/lib/libdts.la
   /usr/lib/pkgconfig/libdca.pc
-  /usr/lib/pkgconfig/libdts.pc
 
 ------------------
 
 Port Notes:
 
------ version 0.0.5-2 -----
-Explicitely exported dts_* symbols as alias to corresponding dca_*,
-for the benefit of AC_CHECK_LIB configure tests.
-This *might* make libdca0 a drop-in replacement for libdts0.
-
------ version 0.0.5-1 -----
-Renamed upstream to libdca, with compatibility links to libdts.
-libdts0 and libdca0 are NOT compatible, however.
-
------ version 0.0.2-1 -----
-Initial release for Cygwin.
+----- version 0.0.5-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
