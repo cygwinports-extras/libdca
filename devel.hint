@@ -1,5 +1,0 @@
-category: Audio
-requires: libdca0
-external-source: libdca
-sdesc: "DTS Coherent Acoustics streams decoder (development)"
-ldesc: "This is a free library for decoding DTS Coherent Acoustics streams."

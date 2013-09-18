@@ -1,0 +1,25 @@
+NAME="libdca"
+VERSION=0.0.5
+RELEASE=10
+CATEGORY="Libs"
+SUMMARY="DTS Coherent Acoustics streams decoder"
+DESCRIPTION="This is a free library for decoding DTS Coherent Acoustics streams."
+HOMEPAGE="http://developers.videolan.org/libdca.html"
+SRC_URI="http://download.videolan.org/pub/videolan/libdca/${VERSION}/libdca-${VERSION}.tar.bz2
+	 http://download.videolan.org/pub/videolan/libdca/${VERSION}/libdca-${VERSION}.tar.bz2.sig"
+
+PKG_NAMES="libdca libdca0 libdca-devel"
+libdca_CATEGORY="Audio"
+libdca_CONTENTS='--exclude=*.dll usr/bin/ usr/share/'
+libdca0_CONTENTS='usr/bin/cygdca-0.dll'
+libdca_devel_CONTENTS='usr/include/ usr/lib/'
+
+CYGCONF_ARGS="--disable-win"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -f ${D}/usr/lib/libdts.a
+	dosym libdca.dll.a /usr/lib/libdts.dll.a
+}
